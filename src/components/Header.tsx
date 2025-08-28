@@ -4,8 +4,8 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
-import logoDesktop from "@/assets/logo-desktop.jpg";
-import logoMobile from "@/assets/logo-mobile.jpg";
+import logoDesktop from "@/assets/logo-desktop-2.png";
+import logoMobile from "@/assets/logo-mobile-2.png";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Label } from "recharts";
