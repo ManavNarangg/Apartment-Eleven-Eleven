@@ -122,6 +122,7 @@ const Header = () => {
               { to: "/contact", label: "Elevator's Waiting" },
               { to: "/our-residents", label: "Our Residents" },
               { to: "/blogs", label: "On Our Shelves" },
+              { to: "/about", label: "Inside Our Doors"}
             ].map((item) => (
               <Link
                 key={item.to}
@@ -136,12 +137,12 @@ const Header = () => {
               </Link>
             ))}
 
-            <button
+            {/* <button
               onClick={() => scrollToSection("about")}
               className="block w-full text-left px-4 py-3 rounded-md text-base font-medium transition-colors duration-200 hover:bg-slate-100 hover:text-blue-600"
             >
               About
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
