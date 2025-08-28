@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container-max section-padding">
         <div className="grid lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2 space-y-6">
-            <h3 className="font-serif text-3xl font-bold">Apartment 11:11</h3>
+            <h3 className="font-serif text-3xl font-bold">Apartment Eleven Eleven</h3>
             <p className="text-lg text-primary-foreground/80 max-w-md leading-relaxed">
               Where creativity lives, community thrives, and every moment is 
               an opportunity for intentional living.
@@ -57,7 +57,7 @@ const Footer = () => {
         
         <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center">
           <p className="text-primary-foreground/60">
-            © {currentYear} Apartment 11:11. All rights reserved.
+            © {currentYear} Apartment Eleven Eleven. All rights reserved.
           </p>
         </div>
       </div>

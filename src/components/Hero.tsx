@@ -1,43 +1,24 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-brand-light to-brand-warm">
-      <div className="container-max section-padding">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in">
-            <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-serif font-bold leading-tight">
-                Welcome to
-                <span className="block text-gradient">Apartment 11:11</span>
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                A curated space where creativity, community, and inspiration converge. 
-                Discover what happens when intentional design meets purposeful living.
-              </p>
-            </div>
-            <div className="flex gap-4">
-              <Button size="lg" className="px-8 py-6 text-lg transition-smooth hover:shadow-elegant">
-                Explore Our Space
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-6 text-lg transition-smooth">
-                Learn More
-              </Button>
-            </div>
-          </div>
-          
-          <div className="relative animate-slide-up">
-            <div className="relative rounded-3xl overflow-hidden shadow-elegant hover-lift">
-              <img 
-                src={heroImage} 
-                alt="Apartment 11:11 interior space" 
-                className="w-full h-[600px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-          </div>
-        </div>
+    <section className="pt-32 pb-32 px-4 bg-background">
+      <div className="container mx-auto text-center max-w-4xl">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-16 leading-tight">
+          The Doors to The Next Chapter
+        </h1>
+        
+        <p className="text-xl md:text-2xl text-foreground mb-12 leading-relaxed">
+          Sometimes it's founders that can bring everything together, other times 
+          you need experts at resource building to help. We're helping build 
+          businesses with the ethos of the new India.
+        </p>
+        
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          From supply chain management and retention enhancement to operational efficiency and business 
+          model redefinition, our team of business engineers is ready to pivot with you in whatever direction 
+          you choose.
+        </p>
       </div>
     </section>
   );
