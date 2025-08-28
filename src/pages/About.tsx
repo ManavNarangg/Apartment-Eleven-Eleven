@@ -80,33 +80,39 @@ const About = () => {
         <ClassicalArchitecture isScrolled={isScrolled} />
 
         {/* Team Section */}
-        <section className="py-20 px-4 bg-porcelain">
+        <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
           <div className="container mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-charcoal mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-charcoal mb-12 sm:mb-16">
               Meet Our Team
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
                 <Card
                   key={index}
                   className="bg-ivory hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-stone-medium/30"
                 >
-                  <CardContent className="p-8">
-                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                      <div className="relative">
+                  <CardContent className="p-6 sm:p-8">
+                    <div className="flex flex-col sm:flex-row gap-6 items-start">
+                      <div className="relative mx-auto sm:mx-0">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-24 h-24 rounded-full object-cover border-4 border-gold/30"
+                          className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-4 border-gold/30"
                         />
-                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-charcoal rounded-full flex items-center justify-center">
+                        <div className="absolute -bottom-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-charcoal rounded-full flex items-center justify-center">
                           <Badge className="w-2 h-2 bg-gold rounded-full" />
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-charcoal mb-1">{member.name}</h3>
-                        <p className="text-charcoal/70 font-semibold mb-4">{member.designation}</p>
-                        <p className="text-charcoal/80 leading-relaxed">{member.description}</p>
+                      <div className="flex-1 text-center sm:text-left">
+                        <h3 className="text-xl sm:text-2xl font-bold text-charcoal mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-charcoal/70 font-semibold mb-3 sm:mb-4">
+                          {member.designation}
+                        </p>
+                        <p className="text-charcoal/80 text-sm sm:text-base leading-relaxed">
+                          {member.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -118,49 +124,71 @@ const About = () => {
 
         {/* Content Bands */}
         <section className="w-full">
-          <div className="bg-muted py-20 px-4">
+          {/* Band 1 */}
+          <div className="bg-muted py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
             <div className="container mx-auto max-w-7xl">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="max-w-2xl">
-                  <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-8 leading-tight">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Image always first on mobile */}
+                <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+                  <div className="relative">
+                    <LottieAnimation
+                      src="molecule-nature.json"
+                      className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 transform translate-x-4 translate-y-4 rounded-lg"
+                    />
+                    <LottieAnimation
+                      src="science-research.json"
+                      className="absolute top-0 left-0 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 shadow-2xl rounded-lg border border-stone-medium"
+                    />
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="max-w-2xl text-center lg:text-left order-2 lg:order-1">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-charcoal mb-6 sm:mb-8 leading-tight">
                     An Alchemy of Nature & Science
                   </h2>
-                  <p className="text-charcoal/70 text-xl mb-6 leading-relaxed">
-                    Our approach combines natural elements with proven scientific research, 
-                    creating impactful solutions for exceptional living experiences.
+                  <p className="text-charcoal/70 text-base sm:text-lg md:text-xl mb-4 sm:mb-6 leading-relaxed">
+                    Our approach combines natural elements with proven
+                    scientific research, creating impactful solutions for
+                    exceptional living experiences.
                   </p>
-                  <p className="text-charcoal text-xl font-semibold">
+                  <p className="text-charcoal text-lg sm:text-xl font-semibold">
                     Where innovation meets tranquility
                   </p>
-                </div>
-                <div className="relative flex justify-center lg:justify-end">
-                  <div className="relative">
-                    <LottieAnimation src="molecule-nature.json" className="w-40 h-40 transform translate-x-6 translate-y-6 rounded-lg" />
-                    <LottieAnimation src="science-research.json" className="absolute top-0 left-0 w-40 h-40 shadow-2xl rounded-lg border border-stone-medium" />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-ivory py-20 px-4">
+          {/* Band 2 */}
+          <div className="bg-ivory py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
             <div className="container mx-auto max-w-7xl">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="relative flex justify-center lg:justify-start lg:order-1">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Image always first on mobile */}
+                <div className="relative flex justify-center lg:justify-start order-1 lg:order-1">
                   <div className="relative">
-                    <LottieAnimation src="quality-excellence.json" className="w-40 h-40 transform translate-x-6 translate-y-6 rounded-lg" />
-                    <LottieAnimation src="transparency-trust.json" className="absolute top-0 left-0 w-40 h-40 shadow-2xl rounded-lg border border-stone-medium" />
+                    <LottieAnimation
+                      src="quality-excellence.json"
+                      className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 transform translate-x-4 translate-y-4 rounded-lg"
+                    />
+                    <LottieAnimation
+                      src="transparency-trust.json"
+                      className="absolute top-0 left-0 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 shadow-2xl rounded-lg border border-stone-medium"
+                    />
                   </div>
                 </div>
-                <div className="max-w-2xl lg:order-2">
-                  <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-8 leading-tight">
+
+                {/* Text */}
+                <div className="max-w-2xl text-center lg:text-left order-2 lg:order-2">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-charcoal mb-6 sm:mb-8 leading-tight">
                     Quality That Speaks for Itself
                   </h2>
-                  <p className="text-charcoal/70 text-xl mb-6 leading-relaxed">
-                    By going to the source, we uncover what you really need to achieve 
-                    sophisticated, comfortable living in an environment of unparalleled excellence.
+                  <p className="text-charcoal/70 text-base sm:text-lg md:text-xl mb-4 sm:mb-6 leading-relaxed">
+                    By going to the source, we uncover what you really need to
+                    achieve sophisticated, comfortable living in an environment
+                    of unparalleled excellence.
                   </p>
-                  <p className="text-charcoal text-xl font-semibold">
+                  <p className="text-charcoal text-lg sm:text-xl font-semibold">
                     Clarity & transparency in everything we create
                   </p>
                 </div>
@@ -168,27 +196,37 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-muted py-20 px-4">
+          {/* Band 3 */}
+          <div className="bg-muted py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
             <div className="container mx-auto max-w-7xl">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="max-w-2xl">
-                  <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Image always first on mobile */}
+                <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+                  <div className="relative">
+                    <LottieAnimation
+                      src="luxury-lifestyle.json"
+                      className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 transform translate-x-4 translate-y-4 rounded-lg"
+                    />
+                    <LottieAnimation
+                      src="excellence-craftsmanship.json"
+                      className="absolute top-0 left-0 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 shadow-2xl rounded-lg border border-stone-medium"
+                    />
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="max-w-2xl text-center lg:text-left order-2 lg:order-1">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary mb-6 sm:mb-8 leading-tight">
                     Excellence in Every Detail
                   </h2>
-                  <p className="text-muted-foreground text-xl mb-6 leading-relaxed">
-                    Our commitment to superior craftsmanship and attention to detail ensures 
-                    every resident experiences the pinnacle of luxury living in thoughtfully 
-                    designed spaces.
+                  <p className="text-muted-foreground text-base sm:text-lg md:text-xl mb-4 sm:mb-6 leading-relaxed">
+                    Our commitment to superior craftsmanship and attention to
+                    detail ensures every resident experiences the pinnacle of
+                    luxury living in thoughtfully designed spaces.
                   </p>
-                  <p className="text-primary text-xl font-semibold">
+                  <p className="text-primary text-lg sm:text-xl font-semibold">
                     Where sophistication meets functionality
                   </p>
-                </div>
-                <div className="relative flex justify-center lg:justify-end">
-                  <div className="relative">
-                    <LottieAnimation src="luxury-lifestyle.json" className="w-40 h-40 transform translate-x-6 translate-y-6 rounded-lg" />
-                    <LottieAnimation src="excellence-craftsmanship.json" className="absolute top-0 left-0 w-40 h-40 shadow-2xl rounded-lg border border-stone-medium" />
-                  </div>
                 </div>
               </div>
             </div>
