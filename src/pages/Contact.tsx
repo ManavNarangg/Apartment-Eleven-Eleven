@@ -19,10 +19,10 @@ const Contact = () => {
         {/* Section A - Hero Quote */}
         <section className="h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-secondary/20 to-background">
           <div className="container-max section-padding text-center relative z-10">
-            <blockquote className="text-4xl md:text-6xl lg:text-8xl font-serif font-bold text-foreground leading-tight max-w-6xl mx-auto animate-fade-in">
-              Great ideas deserve great partnerships. Let's build something
-              extraordinary together.
-            </blockquote>
+            <blockquote className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-6xl mx-auto animate-fade-in px-4">
+  Great ideas deserve great partnerships. Let's build something extraordinary together.
+</blockquote>
+
           </div>
         </section>
 
@@ -39,9 +39,9 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               <Card className="group hover:shadow-elegant transition-smooth border-0 bg-card cursor-pointer transform hover:-translate-y-2">
-                <CardContent className="p-8 text-center h-full flex flex-col">
+                <CardContent className="p-6 sm:p-8 text-center h-full flex flex-col">
                   <div className="mb-6">
                     <div className="w-20 h-20 mx-auto bg-gradient-accent rounded-full flex items-center justify-center mb-4">
                       <Lightbulb className="w-10 h-10 text-black-400" />
@@ -66,7 +66,7 @@ const Contact = () => {
               </Card>
 
               <Card className="group hover:shadow-elegant transition-smooth border-0 bg-card cursor-pointer transform hover:-translate-y-2">
-                <CardContent className="p-8 text-center h-full flex flex-col">
+                <CardContent className="p-6 sm:p-8 text-center h-full flex flex-col">
                   <div className="mb-6">
                     <div className="w-20 h-20 mx-auto bg-gradient-accent rounded-full flex items-center justify-center mb-4">
                       <Users className="w-10 h-10 text-black" />
@@ -91,7 +91,7 @@ const Contact = () => {
               </Card>
 
               <Card className="group hover:shadow-elegant transition-smooth border-0 bg-card cursor-pointer transform hover:-translate-y-2">
-                <CardContent className="p-8 text-center h-full flex flex-col">
+                <CardContent className="p-6 sm:p-8 text-center h-full flex flex-col">
                   <div className="mb-6">
                     <div className="w-20 h-20 mx-auto bg-gradient-subtle rounded-full flex items-center justify-center mb-4">
                       <Rocket className="w-10 h-10 text-black" />
@@ -118,7 +118,7 @@ const Contact = () => {
 
         {/* Section C - FAQs */}
         <section className="py-24 bg-background">
-          <div className="container-max section-padding max-w-4xl">
+          <div className="container-max section-padding max-w-4xl px-4 sm:px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
                 Frequently Asked Questions

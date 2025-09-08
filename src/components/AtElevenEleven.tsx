@@ -238,7 +238,7 @@ const AtElevenEleven = () => {
         delay: 0.3,
       }}
     >
-      <div className={`bg-background/98 backdrop-blur-xl rounded-lg p-3 md:p-6 border border-border shadow-xl shadow-foreground/10 ${isMobile ? 'w-52 mx-2' : 'w-72'} max-w-full`}>
+      <div className={`bg-background/98 backdrop-blur-xl rounded-lg p-3 md:p-6 border border-border shadow-xl shadow-foreground/10 ${isMobile ? 'w-52 mx-2' : 'w-64'} max-w-full`}>
         <p className={`text-muted-foreground ${isMobile ? 'text-xs' : 'text-sm'} leading-relaxed mb-3 md:mb-4 italic`}>
           "{testimonial.content}"
         </p>

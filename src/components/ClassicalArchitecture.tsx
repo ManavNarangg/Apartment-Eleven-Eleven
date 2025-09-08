@@ -136,138 +136,150 @@ const ClassicalArchitecture = ({
         <div className="absolute bottom-1/4 right-1/4 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-amber-100/20 rounded-full blur-xl sm:blur-2xl"></div>
       </div>
 
-      {/* Mobile Layout - Stacked */}
+      {/* Mobile Layout - Gate between Pillars */}
       {isMobile ? (
-        <div className="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 py-8">
-          {/* Mobile Gate Structure */}
-          <div className="w-full max-w-sm h-[70vh] relative bg-gradient-to-b from-gray-300 via-gray-400 to-gray-600 rounded-xl shadow-2xl border-4 border-gray-500 overflow-hidden">
-            {/* Mobile Double Doors */}
-            <div className="absolute inset-0 flex z-20">
-              {/* Left Door Panel - Mobile */}
-              <motion.div
-                initial={{ rotateY: 0 }}
-                animate={shouldAnimate ? { rotateY: -90 } : { rotateY: 0 }}
-                transition={{
-                  duration: 1.5,
-                  ease: [0.25, 0.1, 0.25, 1],
-                  delay: 0.2,
-                }}
-                className="relative w-1/2 h-full bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 shadow-2xl border-r border-gray-500 rounded-l-lg"
+        <div className="relative z-10 w-full h-full flex items-center justify-center px-4">
+          {/* Mobile Layout Container */}
+          <div className="relative w-full max-w-sm h-[75vh] flex items-end justify-between">
+            
+            {/* Left Pillar - Mobile */}
+            <div className="relative flex-shrink-0 h-full flex items-end">
+              <img
+                src={pillarImg}
+                alt="Doric pillar"
+                className="h-full w-auto object-contain opacity-80"
                 style={{
-                  transformOrigin: "left center",
-                  transformStyle: "preserve-3d",
+                  filter: "drop-shadow(4px 6px 12px rgba(0, 0, 0, 0.2)) saturate(0.8)",
+                  maxWidth: "60px"
                 }}
-              >
-                {/* Mobile door panel styling */}
-                <div className="absolute inset-3 border-2 border-gray-400 bg-gradient-to-br from-white/15 to-black/25 rounded-md">
-                  <div className="absolute inset-2 bg-gradient-to-br from-white/8 to-black/15 rounded-sm"></div>
-                </div>
-                
-                {/* Mobile door handle */}
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-4 bg-gradient-to-b from-gray-200 to-gray-600 rounded-full shadow-lg border border-gray-400"></div>
-              </motion.div>
-
-              {/* Right Door Panel - Mobile */}
-              <motion.div
-                initial={{ rotateY: 0 }}
-                animate={shouldAnimate ? { rotateY: 90 } : { rotateY: 0 }}
-                transition={{
-                  duration: 1.5,
-                  ease: [0.25, 0.1, 0.25, 1],
-                  delay: 0.4,
-                }}
-                className="relative w-1/2 h-full bg-gradient-to-l from-gray-900 via-gray-700 to-gray-600 shadow-2xl border-l border-gray-500 rounded-r-lg"
-                style={{
-                  transformOrigin: "right center",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                {/* Mobile door panel styling */}
-                <div className="absolute inset-3 border-2 border-gray-400 bg-gradient-to-br from-white/15 to-black/25 rounded-md">
-                  <div className="absolute inset-2 bg-gradient-to-br from-white/8 to-black/15 rounded-sm"></div>
-                </div>
-                
-                {/* Mobile door handle */}
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-2 h-4 bg-gradient-to-b from-gray-200 to-gray-600 rounded-full shadow-lg border border-gray-400"></div>
-              </motion.div>
+              />
             </div>
 
-            {/* Mobile Content */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={
-                shouldAnimate
-                  ? { opacity: 1, scale: 1 }
-                  : { opacity: 0, scale: 0.9 }
-              }
-              transition={{
-                duration: 1.2,
-                ease: [0.23, 1, 0.32, 1],
-                delay: 1.3,
-              }}
-              className="absolute inset-4 bg-gradient-to-br from-white/98 via-gray-50/96 to-gray-100/98 backdrop-blur-sm rounded-lg shadow-xl flex flex-col justify-center items-center text-center p-4 border-2 border-gray-400 overflow-hidden"
-            >
-              <motion.h1
-                initial={{ y: 20, opacity: 0 }}
-                animate={
-                  shouldAnimate ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
-                }
-                transition={{
-                  duration: 0.8,
-                  delay: 2.0,
-                  ease: [0.23, 1, 0.32, 1],
-                }}
-                className="text-xl sm:text-2xl font-light text-black mb-3 tracking-wide font-serif leading-tight"
-              >
-                Our Philosophy
-              </motion.h1>
+            {/* Central Gate - Mobile - Between Pillars */}
+            <div className="flex-1 relative h-[85%] mx-2">
+              <div className="relative w-full h-full bg-gradient-to-b from-gray-300 via-gray-400 to-gray-600 rounded-t-xl shadow-2xl border-4 border-gray-500 overflow-hidden">
+                {/* Mobile Double Doors */}
+                <div className="absolute inset-0 flex z-20">
+                  {/* Left Door Panel - Mobile */}
+                  <motion.div
+                    initial={{ rotateY: 0 }}
+                    animate={shouldAnimate ? { rotateY: -90 } : { rotateY: 0 }}
+                    transition={{
+                      duration: 1.5,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.2,
+                    }}
+                    className="relative w-1/2 h-full bg-gradient-to-r from-gray-900 via-gray-700 to-gray-600 shadow-2xl border-r border-gray-500 rounded-tl-xl"
+                    style={{
+                      transformOrigin: "left center",
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    {/* Mobile door panel styling */}
+                    <div className="absolute inset-3 border-2 border-gray-400 bg-gradient-to-br from-white/15 to-black/25 rounded-md">
+                      <div className="absolute inset-2 bg-gradient-to-br from-white/8 to-black/15 rounded-sm"></div>
+                    </div>
+                    
+                    {/* Mobile door handle */}
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 w-2 h-4 bg-gradient-to-b from-gray-200 to-gray-600 rounded-full shadow-lg border border-gray-400"></div>
+                  </motion.div>
 
-              <motion.div
-                initial={{ scaleX: 0 }}
-                animate={shouldAnimate ? { scaleX: 1 } : { scaleX: 0 }}
-                transition={{
-                  duration: 1.0,
-                  delay: 2.3,
-                  ease: [0.23, 1, 0.32, 1],
-                }}
-                className="w-16 h-0.5 bg-gradient-to-r from-gray-400 via-black to-gray-400 mb-4 rounded-full shadow-sm"
-              ></motion.div>
+                  {/* Right Door Panel - Mobile */}
+                  <motion.div
+                    initial={{ rotateY: 0 }}
+                    animate={shouldAnimate ? { rotateY: 90 } : { rotateY: 0 }}
+                    transition={{
+                      duration: 1.5,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.4,
+                    }}
+                    className="relative w-1/2 h-full bg-gradient-to-l from-gray-900 via-gray-700 to-gray-600 shadow-2xl border-l border-gray-500 rounded-tr-xl"
+                    style={{
+                      transformOrigin: "right center",
+                      transformStyle: "preserve-3d",
+                    }}
+                  >
+                    {/* Mobile door panel styling */}
+                    <div className="absolute inset-3 border-2 border-gray-400 bg-gradient-to-br from-white/15 to-black/25 rounded-md">
+                      <div className="absolute inset-2 bg-gradient-to-br from-white/8 to-black/15 rounded-sm"></div>
+                    </div>
+                    
+                    {/* Mobile door handle */}
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 w-2 h-4 bg-gradient-to-b from-gray-200 to-gray-600 rounded-full shadow-lg border border-gray-400"></div>
+                  </motion.div>
+                </div>
 
-              <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={
-                  shouldAnimate ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
-                }
-                transition={{
-                  duration: 0.8,
-                  delay: 2.6,
-                  ease: [0.23, 1, 0.32, 1],
-                }}
-                className="text-xs sm:text-sm text-gray-700 leading-relaxed font-light tracking-wide"
-              >
-                At Eleven Eleven, we believe exceptional living begins with understanding that a home is more than a space—it's a sanctuary where life unfolds and dreams take shape.
-              </motion.p>
-            </motion.div>
-          </div>
+                {/* Mobile Content */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={
+                    shouldAnimate
+                      ? { opacity: 1, scale: 1 }
+                      : { opacity: 0, scale: 0.9 }
+                  }
+                  transition={{
+                    duration: 1.2,
+                    ease: [0.23, 1, 0.32, 1],
+                    delay: 1.3,
+                  }}
+                  className="absolute inset-3 bg-gradient-to-br from-white/98 via-gray-50/96 to-gray-100/98 backdrop-blur-sm rounded-lg shadow-xl flex flex-col justify-center items-center text-center p-3 border-2 border-gray-400 overflow-hidden"
+                >
+                  <motion.h1
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={
+                      shouldAnimate ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
+                    }
+                    transition={{
+                      duration: 0.8,
+                      delay: 2.0,
+                      ease: [0.23, 1, 0.32, 1],
+                    }}
+                    className="text-lg sm:text-xl font-light text-black mb-2 tracking-wide font-serif leading-tight"
+                  >
+                    Our Philosophy
+                  </motion.h1>
 
-          {/* Mobile Pillars - Decorative at bottom */}
-          <div className="flex justify-between items-end w-full mt-8 px-4">
-            <img
-              src={pillarImg}
-              alt="Doric pillar"
-              className="h-16 sm:h-20 w-auto object-contain opacity-70"
-              style={{
-                filter: "drop-shadow(4px 6px 12px rgba(0, 0, 0, 0.2)) saturate(0.8)",
-              }}
-            />
-            <img
-              src={pillarImg}
-              alt="Doric pillar"
-              className="h-16 sm:h-20 w-auto object-contain opacity-70"
-              style={{
-                filter: "drop-shadow(4px 6px 12px rgba(0, 0, 0, 0.2)) saturate(0.8)",
-              }}
-            />
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={shouldAnimate ? { scaleX: 1 } : { scaleX: 0 }}
+                    transition={{
+                      duration: 1.0,
+                      delay: 2.3,
+                      ease: [0.23, 1, 0.32, 1],
+                    }}
+                    className="w-12 h-0.5 bg-gradient-to-r from-gray-400 via-black to-gray-400 mb-3 rounded-full shadow-sm"
+                  ></motion.div>
+
+                  <motion.p
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={
+                      shouldAnimate ? { y: 0, opacity: 1 } : { y: 20, opacity: 0 }
+                    }
+                    transition={{
+                      duration: 0.8,
+                      delay: 2.6,
+                      ease: [0.23, 1, 0.32, 1],
+                    }}
+                    className="text-xs text-gray-700 leading-relaxed font-light tracking-wide"
+                  >
+                    At Eleven Eleven, we believe exceptional living begins with understanding that a home is more than a space—it's a sanctuary where life unfolds and dreams take shape.
+                  </motion.p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Right Pillar - Mobile */}
+            <div className="relative flex-shrink-0 h-full flex items-end">
+              <img
+                src={pillarImg}
+                alt="Doric pillar"
+                className="h-full w-auto object-contain opacity-80"
+                style={{
+                  filter: "drop-shadow(4px 6px 12px rgba(0, 0, 0, 0.2)) saturate(0.8)",
+                  maxWidth: "60px"
+                }}
+              />
+            </div>
           </div>
 
           {/* Mobile Instructions */}

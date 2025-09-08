@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
-import About from "@/components/About";
+// import About from "@/components/About";
 import Brands from "@/components/Brands";
 import Media from "@/components/Media";
 import WhyUs from "@/components/WhyUs";

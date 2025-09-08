@@ -10,6 +10,8 @@ import Blogs from "./pages/Blogs";
 import ContactForm from "./pages/ContactForm";
 import OurResidents from "./pages/OurResidents";
 import About from "./pages/About";
+import ScrollToTop from "./ScrollToTop";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
@@ -26,6 +29,7 @@ const App = () => (
           <Route path="/contact-form" element={<ContactForm />}/>
           <Route path="/our-residents" element={<OurResidents />}/>
           <Route path="/about" element={<About />}/>
+          <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
