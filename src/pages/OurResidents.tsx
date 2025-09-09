@@ -588,29 +588,29 @@ const OurResidents: React.FC = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white rounded-2xl shadow-xl p-6 w-80 max-w-sm relative"
+                className="bg-white rounded-2xl shadow-xl p-10 w-[600px] max-w-2xl relative"
               >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedResident(null)}
-                  className="absolute top-3 right-3 text-slate-500 hover:text-slate-800"
+                  className="absolute top-4 right-4 text-slate-500 hover:text-slate-800"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-6 h-6" />
                 </button>
 
                 {/* Content */}
                 <div
-                  className={`w-16 h-16 ${selectedResident.bgColor} rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto`}
+                  className={`w-20 h-20 ${selectedResident.bgColor} rounded-full flex items-center justify-center text-white font-bold text-2xl mb-6 mx-auto`}
                 >
                   {selectedResident.logo}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 text-center mb-2">
+                <h3 className="text-2xl font-bold text-slate-900 text-center mb-3">
                   {selectedResident.name}
                 </h3>
-                <p className="text-slate-600 text-center mb-4">
+                <p className="text-slate-600 text-center mb-6 text-lg">
                   {selectedResident.industry}
                 </p>
-                <p className="text-sm text-slate-500 text-center">
+                <p className="text-base text-slate-500 text-center leading-relaxed">
                   {selectedResident.description ||
                     "This company is making an impact in its industry with innovative solutions."}
                 </p>

@@ -4,6 +4,11 @@ import { motion, type Variants } from "framer-motion";
 interface SplashScreenProps {
   onDismiss: () => void;
 }
+interface SplashScreenProps {
+  onDismiss: () => void;
+  clicked: string | null; 
+  setClicked: React.Dispatch<React.SetStateAction<string | null>>;
+}
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -138,7 +143,7 @@ const buttonVariants: Variants = {
   },
 };
 
-const SplashScreen = ({ onDismiss }: SplashScreenProps) => {
+const SplashScreen = ({ onDismiss, clicked, setClicked }: SplashScreenProps) => {
   return (
     <motion.div
       className="fixed inset-0 z-[60] bg-background flex items-center justify-center overflow-hidden"
@@ -195,7 +200,11 @@ const SplashScreen = ({ onDismiss }: SplashScreenProps) => {
           variants={buttonVariants}
         >
           <motion.button
-            onClick={onDismiss}
+            onClick={() => {
+              setClicked("true")
+              localStorage.setItem('clicked', "true")
+              onDismiss()
+            }}
             className="group relative overflow-hidden bg-primary text-primary-foreground font-semibold py-4 px-8 rounded-2xl shadow-lg border border-primary/20"
             whileHover={{
               scale: 1.05,

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import hallwayBg from "../assets/Hallway.webp"
 
 const hallwaysData = [
   {
@@ -161,16 +162,8 @@ export default function MultiHallwayVisualization() {
           </div>
         )}
 
-        {/* Hallways Container */}
+        {/* Hallways */}
         <div className="relative bg-white rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-xl overflow-hidden">
-          <div className="absolute inset-0 opacity-5">
-            <div className="grid grid-cols-20 gap-2 h-full">
-              {Array.from({ length: 100 }).map((_, i) => (
-                <div key={i} className="bg-slate-300 rounded-full"></div>
-              ))}
-            </div>
-          </div>
-
           <div
             key={currentSlide}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 transition-all duration-500 ease-out"
@@ -179,34 +172,42 @@ export default function MultiHallwayVisualization() {
               return (
                 <div
                   key={hallway.id}
-                  className="relative flex flex-col h-full"
+                  className="relative flex flex-col h-full rounded-2xl overflow-hidden shadow-lg h-[450px]"
                   style={{
                     opacity: 1,
                     transform: "translateY(0px)",
-                    transition: `all 0.6s ease-out ${hallwayIndex * 150}ms`
+                    transition: `all 0.6s ease-out ${hallwayIndex * 150}ms`,
                   }}
                 >
-                  <div className="flex-1 flex justify-center">
-                    <div className="bg-white rounded-2xl shadow-lg p-4 md:p-8 border border-slate-200 w-full text-center min-h-[280px] md:min-h-[380px] flex flex-col justify-center hover:shadow-xl transition-shadow duration-300">
-                      {hallway.conversations[0] && (
-                        <>
-                          <blockquote className="text-slate-700 italic mb-4 md:mb-6 text-base md:text-lg lg:text-xl leading-relaxed">
-                            "{hallway.conversations[0].quote}"
-                          </blockquote>
-                          <div>
-                            <p className="font-bold text-slate-900 text-base md:text-lg lg:text-xl">
-                              {hallway.conversations[0].author}
-                            </p>
-                            <p className="text-slate-600 text-sm md:text-base lg:text-lg">
-                              {hallway.conversations[0].role}
-                            </p>
-                            <p className="text-slate-500 text-sm md:text-base lg:text-lg">
-                              {hallway.conversations[0].company}
-                            </p>
-                          </div>
-                        </>
-                      )}
-                    </div>
+                  {/* Background hallway image */}
+                  <img
+                    src={hallwayBg}
+                    alt="Hallway"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  {/* Dark overlay for readability */}
+                  <div className="absolute inset-0 bg-black/50"></div>
+
+                  {/* Conversation content */}
+                  <div className="relative z-10 flex flex-col items-center justify-center text-center p-6 md:p-8 h-full">
+                    {hallway.conversations[0] && (
+                      <>
+                        <blockquote className="text-white italic mb-4 md:mb-6 text-base md:text-lg lg:text-xl leading-relaxed">
+                          "{hallway.conversations[0].quote}"
+                        </blockquote>
+                        <div>
+                          <p className="font-bold text-white text-base md:text-lg lg:text-xl">
+                            {hallway.conversations[0].author}
+                          </p>
+                          <p className="text-slate-200 text-sm md:text-base lg:text-lg">
+                            {hallway.conversations[0].role}
+                          </p>
+                          <p className="text-slate-300 text-sm md:text-base lg:text-lg">
+                            {hallway.conversations[0].company}
+                          </p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               );
